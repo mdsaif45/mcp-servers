@@ -1,0 +1,22 @@
+{
+  "name": "dev-mcp-mcp",
+  "version": "1.0.0",
+  "description": "MyProject Development MCP Server - Tools for codebase analysis, project management, and DevOps",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --format=esm --external:@modelcontextprotocol/sdk --external:zod",
+    "start": "node dist/index.js",
+    "dev": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --format=esm --external:@modelcontextprotocol/sdk --external:zod --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.19.12",
+    "typescript": "^5.5.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_comment": "Template only. Copy to claude_desktop_config.json (gitignored) and supply real values, or set the referenced environment variables so ${VAR} expansion resolves them. Replace /home/saif/mcp-servers with your clone path.",
+  "mcpServers": {
+    "oracle-db": {
+      "command": "node",
+      "args": ["/home/saif/mcp-servers/oracle-query-mcp/index.js"],
+      "env": {
+        "ORACLE_USER": "${ORACLE_USER}",
+        "ORACLE_PASSWORD": "${ORACLE_PASSWORD}",
+        "ORACLE_CONNECTION_STRING": "${ORACLE_CONNECTION_STRING}"
+      }
+    },
+    "redis": {
+      "command": "node",
+      "args": ["/home/saif/mcp-servers/redis-mcp/index.js"],
+      "env": {
+        "REDIS_HOST": "${REDIS_HOST}",
+        "REDIS_PORT": "${REDIS_PORT}",
+        "REDIS_PASSWORD": "${REDIS_PASSWORD}",
+        "REDIS_USER": "${REDIS_USER}"
+      }
+    },
+    "mysql-mcp": {
+      "command": "node",
+      "args": ["/home/saif/mcp-servers/mysql-mcp/dist/index.js"],
+      "env": {
+        "MYSQL_HOST": "${MYSQL_HOST}",
+        "MYSQL_PORT": "${MYSQL_PORT}",
+        "MYSQL_USER": "${MYSQL_USER}",
+        "MYSQL_PASSWORD": "${MYSQL_PASSWORD}",
+        "MYSQL_DATABASE": "${MYSQL_DATABASE}"
+      }
+    },
+    "mongodb": {
+      "command": "node",
+      "args": ["/home/saif/mcp-servers/mongodb-mcp/index.js"],
+      "env": {
+        "MONGODB_URI": "${MONGODB_URI}",
+        "MONGODB_DATABASE": "${MONGODB_DATABASE}"
+      }
+    }
+  }
+}

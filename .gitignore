@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output (rebuilt on each host via `npm run build`)
+dist/
+
+# Secrets — never commit real credentials
+.env
+.env.*
+!.env.example
+claude_desktop_config.json
+mcp-config.json
+*.local.json
+
+# Logs / OS / editor noise
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Tooling caches
+.code-review-graph/
