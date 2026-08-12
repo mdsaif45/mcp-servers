@@ -1,7 +1,7 @@
 {
   "name": "dev-mcp-mcp",
   "version": "1.0.0",
-  "description": "MyProject Development MCP Server - Tools for codebase analysis, project management, and DevOps",
+  "description": "DevProject Development MCP Server - Tools for codebase analysis, project management, and DevOps",
   "private": true,
   "type": "module",
   "main": "dist/index.js",

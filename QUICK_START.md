@@ -61,7 +61,7 @@ Open the config file and paste this configuration (replace existing content or m
         "D:\\VegamProjects\\MyProject\\MyProject_Core\\mcp-servers\\dev-mcp\\dist\\index.js"
       ],
       "env": {
-        "MYPROJECT_PROJECT_ROOT": "D:\\VegamProjects\\MyProject\\MyProject_Core"
+        "myproject_PROJECT_ROOT": "D:\\VegamProjects\\MyProject\\MyProject_Core"
       }
     }
   }

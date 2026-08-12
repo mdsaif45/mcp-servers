@@ -1,6 +1,6 @@
-# MyProject Development MCP Server
+# DevProject Development MCP Server
 
-A comprehensive Model Context Protocol (MCP) server for the MyProject project that provides tools for codebase analysis, project management, Docker operations, and development workflows.
+A comprehensive Model Context Protocol (MCP) server for the DevProject project that provides tools for codebase analysis, project management, Docker operations, and development workflows.
 
 ## Features
 
@@ -31,7 +31,7 @@ This MCP server provides the following capabilities:
 ### 1. Install Dependencies
 
 ```bash
-cd MyProject_Core/mcp-servers/dev-mcp
+cd DevProject_Core/mcp-servers/dev-mcp
 npm install
 ```
 
@@ -54,10 +54,10 @@ Add the following configuration to your Claude Desktop config file:
     "dev-mcp": {
       "command": "node",
       "args": [
-        "D:\\VegamProjects\\MyProject\\MyProject_Core\\mcp-servers\\dev-mcp\\dist\\index.js"
+        "D:\\VegamProjects\\DevProject\\DevProject_Core\\mcp-servers\\dev-mcp\\dist\\index.js"
       ],
       "env": {
-        "MYPROJECT_PROJECT_ROOT": "D:\\VegamProjects\\MyProject\\MyProject_Core"
+        "devproject_PROJECT_ROOT": "D:\\VegamProjects\\DevProject\\DevProject_Core"
       }
     }
   }
@@ -83,7 +83,7 @@ Add the following configuration to your Claude Desktop config file:
 ```typescript
 // Use the analyze-project tool
 {
-  "projectPath": "MyProject_Admin/MyProject_Admin_WebAPI/MyProject_Admin_WebAPI.csproj"
+  "projectPath": "DevProject_Admin/DevProject_Admin_WebAPI/DevProject_Admin_WebAPI.csproj"
 }
 ```
 
@@ -136,7 +136,7 @@ npx @modelcontextprotocol/inspector node dist/index.js
 
 ## Environment Variables
 
-- **MYPROJECT_PROJECT_ROOT** - The root directory of the MyProject project (default: current working directory)
+- **devproject_PROJECT_ROOT** - The root directory of the DevProject project (default: current working directory)
 
 ## Tools Reference
 
@@ -247,7 +247,7 @@ Get environment information.
 
 ## License
 
-Private - MyProject Project
+Private - DevProject Project
 
 ## Author
 

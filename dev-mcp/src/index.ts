@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * MyProject Development MCP Server
+ * DevProject Development MCP Server
  *
- * A lightweight Model Context Protocol server for the MyProject project.
+ * A lightweight Model Context Protocol server for the DevProject project.
  * Provides tools for codebase analysis, project management, Docker operations, and more.
  */
 
@@ -17,7 +17,7 @@ import * as path from 'path';
 const execAsync = promisify(exec);
 
 // Project root directory
-const PROJECT_ROOT = process.env.MYPROJECT_PROJECT_ROOT || process.cwd();
+const PROJECT_ROOT = process.env.devproject_PROJECT_ROOT || process.cwd();
 
 // Create MCP Server
 const server = new McpServer({
@@ -60,13 +60,13 @@ function findFilesRecursive(dir: string, pattern: RegExp, maxDepth = 10, current
 // ==================== CODEBASE ANALYSIS TOOLS ====================
 
 /**
- * Find all .csproj files in the MyProject solution
+ * Find all .csproj files in the DevProject solution
  */
 server.registerTool(
   'find-projects',
   {
     title: 'Find C# Projects',
-    description: 'Find all .csproj files in the MyProject solution with optional filtering',
+    description: 'Find all .csproj files in the DevProject solution with optional filtering',
     inputSchema: {
       pattern: z.string().optional().describe('Optional pattern to filter projects (e.g., "WebAPI")'),
       includeTests: z.boolean().optional().default(true).describe('Include test projects')
@@ -117,9 +117,9 @@ server.registerTool(
   'find-controllers',
   {
     title: 'Find API Controllers',
-    description: 'Find all API controllers in the MyProject solution',
+    description: 'Find all API controllers in the DevProject solution',
     inputSchema: {
-      project: z.string().optional().describe('Filter by project name (e.g., "MyProject_Admin")')
+      project: z.string().optional().describe('Filter by project name (e.g., "DevProject_Admin")')
     },
     outputSchema: {
       controllers: z.array(z.object({
@@ -164,7 +164,7 @@ server.registerTool(
   'search-code',
   {
     title: 'Search Code',
-    description: 'Search for a pattern in the MyProject codebase (.cs files)',
+    description: 'Search for a pattern in the DevProject codebase (.cs files)',
     inputSchema: {
       pattern: z.string().describe('Search pattern (string)'),
       maxResults: z.number().optional().default(50).describe('Maximum number of results')
@@ -228,7 +228,7 @@ server.registerTool(
   'docker-ps',
   {
     title: 'List Docker Containers',
-    description: 'List all running Docker containers related to MyProject',
+    description: 'List all running Docker containers related to DevProject',
     inputSchema: {
       all: z.boolean().optional().default(false).describe('Show all containers (including stopped)')
     },
@@ -542,7 +542,7 @@ server.registerTool(
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error('MyProject Development MCP Server started');
+  console.error('DevProject Development MCP Server started');
   console.error(`Project root: ${PROJECT_ROOT}`);
 }
 

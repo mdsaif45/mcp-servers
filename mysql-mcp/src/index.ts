@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * MyProject MySQL MCP Server
+ * MySQL MCP Server
  *
- * A custom Model Context Protocol server for querying the MyProject MySQL database.
+ * A generic Model Context Protocol server for querying a MySQL database.
  * Provides tools for executing SQL queries, describing tables, and listing database objects.
  */
 
@@ -17,7 +17,7 @@ const dbConfig = {
   port: parseInt(process.env.MYSQL_PORT || '3306', 10),
   user: process.env.MYSQL_USER || 'root',
   password: process.env.MYSQL_PASSWORD || '',
-  database: process.env.MYSQL_DATABASE || 'myproject',
+  database: process.env.MYSQL_DATABASE || 'default_db',
   waitForConnections: true,
   connectionLimit: 5,
   queueLimit: 0
@@ -44,7 +44,7 @@ server.registerTool(
   'query',
   {
     title: 'Execute SQL Query',
-    description: 'Execute a read-only SQL query against the MyProject MySQL database. Only SELECT statements are allowed for safety.',
+    description: 'Execute a read-only SQL query against the MySQL database. Only SELECT statements are allowed for safety.',
     inputSchema: {
       sql: z.string().describe('The SQL SELECT query to execute'),
       params: z.array(z.any()).optional().describe('Optional query parameters for prepared statements')
@@ -86,7 +86,7 @@ server.registerTool(
   'list-tables',
   {
     title: 'List Database Tables',
-    description: 'List all tables in the MyProject database',
+    description: 'List all tables in the database',
     inputSchema: {},
     outputSchema: {
       tables: z.array(z.string()),
@@ -314,11 +314,10 @@ server.registerTool(
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error('MyProject MySQL MCP Server started');
+  console.error('MySQL MCP Server started');
 }
 
 main().catch((error) => {
   console.error('Failed to start server:', error);
   process.exit(1);
 });
-

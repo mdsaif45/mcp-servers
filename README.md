@@ -140,7 +140,7 @@ npm run dev  # Auto-rebuild on changes
 - `MYSQL_DATABASE` - Database name
 
 **dev-mcp:**
-- `MYPROJECT_PROJECT_ROOT` - Path to MyProject_Core directory
+- `myproject_PROJECT_ROOT` - Path to MyProject_Core directory
 
 ### Claude Desktop Config
 

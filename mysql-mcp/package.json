@@ -1,14 +1,14 @@
 {
-  "name": "mysql-mcp-mcp",
+  "name": "mysql-mcp",
   "version": "1.0.0",
-  "description": "Custom MySQL MCP Server for MyProject Application",
+  "description": "MySQL MCP Server",
   "private": true,
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --format=esm --external:@modelcontextprotocol/sdk --external:mysql2 --external:zod",
     "start": "node dist/index.js",
-    "dev": "tsc --watch"
+    "dev": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --format=esm --external:@modelcontextprotocol/sdk --external:mysql2 --external:zod --watch"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "esbuild": "^0.19.12",
     "typescript": "^5.5.0"
   }
 }
-

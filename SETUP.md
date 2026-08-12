@@ -106,7 +106,7 @@ Use the dev-mcp server to find all WebAPI projects in the solution
         "D:\\VegamProjects\\MyProject\\MyProject_Core\\mcp-servers\\dev-mcp\\dist\\index.js"
       ],
       "env": {
-        "MYPROJECT_PROJECT_ROOT": "D:\\VegamProjects\\MyProject\\MyProject_Core"
+        "myproject_PROJECT_ROOT": "D:\\VegamProjects\\MyProject\\MyProject_Core"
       }
     }
   }
